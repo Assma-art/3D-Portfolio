@@ -63,11 +63,11 @@ p {
 }
 
 @keyframes animate-nav {
-  0%{
+  0% {
     visibility: hidden;
     opacity: 0;
   }
- 100%{
+  100% {
     visibility: visible;
     opacity: 1;
   }
@@ -194,9 +194,9 @@ a:hover .tooltip,
 .desc {
   margin: 1rem 0 2rem;
 }
-.home-info .btn-sci {
-  display: flex;
-  align-items: center;
+
+.desc .more-text{
+  display: none;
 }
 
 .btn {
@@ -209,7 +209,18 @@ a:hover .tooltip,
   color: var(--bg-color);
   font-weight: 600;
   transition: 0.3s;
+  cursor: pointer;
 }
+.desc.more-text--show{
+    display: inline;
+}
+
+
+.home-info .btn-sci {
+  display: flex;
+  align-items: center;
+}
+
 .btn:hover {
   box-shadow: none;
 }
@@ -251,15 +262,14 @@ a:hover .tooltip,
 
 .img-box img {
   position: absolute;
-  top: 3rem;
+  top: 0rem;
   display: block;
-  width: 85%;
+  width: 100%;
   object-fit: cover;
 }
 .img-box.about-img {
   background: transparent;
   box-shadow: 0 0 2rem var(--main-color), inset 0 0 1rem var(--main-color);
-
 }
 .img-box.home-img img {
   z-index: -1;
@@ -271,11 +281,7 @@ a:hover .tooltip,
 .about-info .title {
   text-align: left;
 }
-.about-info h3 {
-  font-size: 2.5rem;
-  color: var(--main-color);
-  margin-top: -1rem;
-}
+
 .about-info .btn {
   padding: 1.2rem 4rem;
 }

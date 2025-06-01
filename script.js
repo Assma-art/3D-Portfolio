@@ -23,7 +23,7 @@ Array.from(navs[0].children).forEach((nav, idx) => {
     const arrSecs = array.slice(1, -1); // only requires indexes 1,2,3 or does not require start and end indexes
     arrSecs.forEach((arrSec) => {
       if (arrSec.classList.contains("active")) {
-       sections[4].classList.add("action-contact")
+        sections[4].classList.add("action-contact");
       }
     });
     if (sections[0].classList.contains("active")) {
@@ -57,5 +57,20 @@ portfolioLists.forEach((list, idx) => {
 
 //visibility for contact section when reloading(cube reloading animation)
 setTimeout(() => {
-  sections[4].classList.remove("active")
-}, 1500)
+  sections[4].classList.remove("active");
+}, 1500);
+
+// show more button
+const parentContainer = document.querySelector(".section about");
+parentContainer.addEventListener("click", (event) => {
+  const current = event.target;
+  const isReadMoreBtn = current.className.includes("btn");
+
+  if (!isReadMoreBtn) return;
+
+  const currentText = event.target.parentNode.querySelector(".more-text");
+  currentText.classList.toggle("more-text--show");
+  current.textContent = current.textContent.includes("Read more")
+    ? "Read less..."
+    : "Read More...";
+});
